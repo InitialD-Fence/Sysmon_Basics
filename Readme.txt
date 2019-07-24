@@ -9,7 +9,7 @@ sysmon.exe -accepteula -i sysmonconfig-export.xml
 ## Update current configuration
 sysmon.exe -c sysmonconfig-export.xml
 
-## To unistall run with administrator rights
+## To uninstall run with administrator rights
 sysmon.exe -u
 
 ## Blank config
