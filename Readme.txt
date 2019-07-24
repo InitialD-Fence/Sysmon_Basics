@@ -56,3 +56,9 @@ Get-WinEvent -filterhashtable @{logname="Microsoft-Windows-Sysmon/Operational";i
 
 ## See the frequency and count the binaries making network connections, as well as see the rare/abnormal binaries that shouldn't be making call outs.
 Get-WinEvent -filterhashtable @{logname="Microsoft-Windows-Sysmon/Operational";id=3} | %{$_.Properties[14].Value} | Group-Object | Select-Object count, name | Sort-Object -Property count
+
+## NO EVENT FORWARDING? DON'T LET IT BE AN EXCUSE FOR NOT USING SYSMON!
+## Don't forget to Invoke-Command and pull event ID's from remote machines to help dive into an investigation.
+Invoke-Command -ComputerName $computername -ScriptBlock {Get-WinEvent -filterhashtable @{logname="Microsoft-Windows-Sysmon/Operational";id=22} | %{$_.Properties[4].Value} | Group-Object | Select-Object count, name | Sort-Object -Property count -Descending}
+
+## You can always Out-File and Copy-Item if the formatting doesn't come out to your liking. (Had some issues with this.)
