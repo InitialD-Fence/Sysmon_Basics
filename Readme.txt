@@ -1,7 +1,7 @@
 ## Sysmon Tips
-## USE NOTEPAD++ BECAUSE ITS SIMPLY THE BEST.
+## Use Powershell ISE when working with the commands, and Notepad++ when working with config (Save as .XML).
 
-## Run Powershell as Admin
+## Run Powershell ISE as Admin
 
 ## Install Sysmon
 sysmon.exe -accepteula -i sysmonconfig-export.xml
@@ -12,7 +12,9 @@ sysmon.exe -c sysmonconfig-export.xml
 ## To uninstall run with administrator rights
 sysmon.exe -u
 
-## Blank config
+## Suggest install SwiftOnSecurity config: https://github.com/SwiftOnSecurity/sysmon-config/blob/master/z-AlphaVersion.xml
+
+## Blank config when ready to dabble yourself
 
 <Sysmon schemaversion="4.21">
 	<HashAlgorithms>md5,sha256</HashAlgorithms>
@@ -24,7 +26,6 @@ sysmon.exe -u
 
     </EventFiltering>
 </Sysmon>
-
 
 ## Grab 1 sample event of each event type (Notice errors for event types that have not fired yet)
 ## The purpose here is to see which lines of the message you want to analyze in bulk. Line 1 is always "UTCtime".
