@@ -4,7 +4,7 @@
 function sysmondeploy {
 
 # Accept user input for switch
-$userinput = Read-Host "1. Deploy to single host`r`n2. Deploy to list of hosts`r`n`r`n3. Update Sysmon Config`r`n`r`nSelect Option"
+$userinput = Read-Host "1. Deploy to single host`r`n2. Deploy to list of hosts`r`n3. Update Sysmon Config`r`n`r`nSelect Option"
 
 
 switch($userinput){
